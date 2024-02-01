@@ -90,7 +90,7 @@ class TransformerEncoder(ClassificationModel):
 
         logprobabilities = self.logsoftmax(logits)
 
-        return logprobabilities, None, None, None
+        return logprobabilities
 
     def save(self, path="model.pth", **kwargs):
         print("\nsaving model to " + path)
