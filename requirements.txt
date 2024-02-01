@@ -1,0 +1,13 @@
+numpy
+pandas
+geopandas
+torch
+torchvision
+torchaudio
+scikit-learn
+matplotlib
+seaborn
+tqdm
+tables
+h5py
+urllib3 < 2.0.0
