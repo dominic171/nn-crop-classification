@@ -10,6 +10,15 @@ import torch
 from trainer import train_on_region
 
 
+# Settings seeds and forcing deterministic/benchmark behavior
+random_seed = 2024
+random.seed(random_seed)
+np.random.seed(random_seed)
+torch.manual_seed(random_seed)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+
+
 def run_experiments():
     # Emperiment 1:
     # Model: TempCNN
@@ -76,13 +85,7 @@ if __name__ == "__main__":
     torch.backends.cudnn.benchmark = False
 
     # Set device to GPU if available
-    device = torch.device(
-        "cuda:0"
-        if torch.cuda.is_available()
-        else "mps"
-        if torch.backends.mps.is_available()
-        else "cpu"
-    )
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
     run_experiments()
