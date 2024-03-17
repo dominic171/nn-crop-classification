@@ -28,7 +28,7 @@ To setup the repository on your system:
 
 ## Code Structure explained
 
-The code is separated into the folder models, the folder utils, the folder data, the folder results, the file main.py and trainer.py
+The code is separated into the folders models, utils, data, and results & the files main.py, eurocrops.py, and trainer.py
 
 models: This folder is intended for the neural network definitions (e.g. your torch.nn.Module class)
 
@@ -42,6 +42,8 @@ trainer.py: Based on the configuration passed in by the main file, it:
 main.py: This is the file you want to execute. It:
 1. Contains the "run configuration" for each model, you want to train. That config is passed to the trainer and contains all the parameters that can change.
 2. In here, you can easily add a new configuration to test an additional model or setup. Note that some more special models may require small changes in the trainer.py file.
+
+eurocrops.py: This contains all the code to load and process the EuroCrops demo dataset. It provides the EuroCrops dataset class (PyTorch format).
 
 utils: This folder contains additional definitions that are required by some model or the trainer
 
